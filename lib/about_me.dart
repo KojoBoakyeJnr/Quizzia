@@ -178,9 +178,11 @@ class MyInputField extends StatelessWidget {
           ),
           TextField(
             maxLines: maxLines,
+
             controller: controllerName,
             cursorColor: Colors.amber[800],
             decoration: InputDecoration(
+              contentPadding: EdgeInsets.only(left: 10, top: 18, bottom: 18),
               filled: true,
               fillColor: Color.fromRGBO(231, 230, 230, 1),
               hintText: placeholderText,
