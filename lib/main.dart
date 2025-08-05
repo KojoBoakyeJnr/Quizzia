@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizzia_splash_screen/about_me.dart';
 import 'package:quizzia_splash_screen/onboarding.dart';
 import 'package:quizzia_splash_screen/splash_screen.dart';
 
@@ -10,6 +11,6 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Onboarding());
+    return MaterialApp(home: AboutMe());
   }
 }
