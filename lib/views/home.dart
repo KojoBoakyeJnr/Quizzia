@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
+import 'package:quizzia_splash_screen/resources/app_formfields.dart';
 import 'package:quizzia_splash_screen/resources/app_images.dart';
 import '../resources/app_strings.dart';
 
@@ -78,30 +79,7 @@ class _ScrollableRowState extends State<ScrollableRow> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(right: 10.0),
-                child: SizedBox(
-                  width: 296,
-                  height: 52,
-                  child: SearchBar(
-                    elevation: WidgetStatePropertyAll(0),
-                    shape: WidgetStatePropertyAll(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    backgroundColor: WidgetStatePropertyAll(
-                      AppColors.inputFieldGrey,
-                    ),
-                    hintText: AppStrings.search,
-                    hintStyle: WidgetStatePropertyAll(
-                      TextStyle(color: AppColors.textGrey, fontSize: 14),
-                    ),
-                    leading: Icon(
-                      size: 13.53,
-                      CupertinoIcons.search,
-                      color: AppColors.textGrey,
-                    ),
-                  ),
-                ),
+                child: SearchInputField(),
               ),
               Container(
                 decoration: BoxDecoration(

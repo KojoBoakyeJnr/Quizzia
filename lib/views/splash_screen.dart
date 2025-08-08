@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
 import '../resources/app_strings.dart';
