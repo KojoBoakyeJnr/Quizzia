@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:quizzia_splash_screen/resources.dart/app_colors.dart';
-import 'package:quizzia_splash_screen/resources.dart/app_images.dart';
-import '../resources.dart/app_strings.dart';
+import 'package:quizzia_splash_screen/resources/app_colors.dart';
+import 'package:quizzia_splash_screen/resources/app_images.dart';
+import '../resources/app_strings.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quizzia_splash_screen/resources.dart/app_colors.dart';
-import 'package:quizzia_splash_screen/resources.dart/app_images.dart';
-import '../resources.dart/app_strings.dart';
+import 'package:quizzia_splash_screen/resources/app_colors.dart';
+import 'package:quizzia_splash_screen/resources/app_images.dart';
+import '../resources/app_strings.dart';
 
 class Onboarding extends StatelessWidget {
   const Onboarding({super.key});

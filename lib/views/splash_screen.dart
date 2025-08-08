@@ -27,7 +27,7 @@ class SplashScreen extends StatelessWidget {
                         AppStrings.appName,
                         style: GoogleFonts.originalSurfer(
                           fontSize: 24,
-                          color: AppColors.black,
+                          color: const Color.fromARGB(255, 5, 5, 5),
                         ),
                       ),
                     ),
