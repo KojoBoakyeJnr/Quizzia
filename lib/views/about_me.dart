@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quizzia_splash_screen/resources/app_button.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
 import '../resources/app_strings.dart';
 
@@ -109,37 +110,10 @@ class _AboutMeState extends State<AboutMe> {
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 10.0),
-                child: SizedBox(
-                  width: 358,
-                  height: 58,
-                  child: TextButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStateColor.resolveWith((states) {
-                        if (isFormFilled) {
-                          if (AppColors.primary != null) {
-                            return AppColors.primary;
-                          } else {
-                            return AppColors.primary;
-                          }
-                        } else {
-                          return AppColors.buttonGrey;
-                        }
-                      }),
-                      shape: WidgetStatePropertyAll(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      AppStrings.submit,
-                      style: TextStyle(
-                        color: AppColors.primaryWhite,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                  ),
+                child: CustomButton(
+                  text: AppStrings.submit,
+                  buttonColor: AppColors.buttonGrey,
+                  onPressed: () {},
                 ),
               ),
             ),
