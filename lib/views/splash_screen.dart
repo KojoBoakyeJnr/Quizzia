@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quizzia_splash_screen/resources.dart/app_colors.dart';
-import '../resources.dart/app_strings.dart';
-import '../resources.dart/app_images.dart';
+import 'package:quizzia_splash_screen/resources/app_colors.dart';
+import '../resources/app_strings.dart';
+import '../resources/app_images.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
