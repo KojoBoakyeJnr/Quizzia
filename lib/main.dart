@@ -18,11 +18,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        Routes.splashScreenPage: (context) => const SplashScreen(),
-        Routes.onboardingPage: (context) => const Onboarding(),
-        Routes.aboutMePage: (context) => const AboutMe(),
-        Routes.homePage: (context) => const Home(),
-        Routes.categoriesPage: (context) => const Categories(),
+        Routes.splashScreenPage: (context) => SplashScreen(),
+        Routes.onboardingPage: (context) => Onboarding(),
+        Routes.aboutMePage: (context) => AboutMe(),
+        Routes.homePage: (context) => Home(),
+        Routes.categoriesPage: (context) => Categories(),
       },
     );
   }
