@@ -127,9 +127,7 @@ class _AboutMeState extends State<AboutMe> {
                   ],
                 ),
               ),
-              //first child ---input fields
 
-              //third child ---button
               SafeArea(
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 10.0),

@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quizzia_splash_screen/models/quiz_categories.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
-import 'package:quizzia_splash_screen/views/home.dart';
+
 import 'package:quizzia_splash_screen/resources/app_images.dart';
 import '../resources/app_strings.dart';
 

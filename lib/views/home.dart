@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:dotted_border/dotted_border.dart';
+
+import 'package:quizzia_splash_screen/models/profile_picture.dart';
+import 'package:quizzia_splash_screen/models/quiz_categories.dart';
+import 'package:quizzia_splash_screen/models/score_section.dart';
+import 'package:quizzia_splash_screen/models/section_header.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
 import 'package:quizzia_splash_screen/resources/app_formfields.dart';
 import 'package:quizzia_splash_screen/resources/app_images.dart';
@@ -31,12 +34,16 @@ class _HomeState extends State<Home> {
   }
 }
 
-class ProfileRow extends StatelessWidget {
-  ProfileRow({super.key});
-  String userName =
-      AppStrings
-          .sampleUserName; //i will use firstNameController from about_me page
+class ProfileRow extends StatefulWidget {
+  const ProfileRow({super.key});
 
+  @override
+  State<ProfileRow> createState() => _ProfileRowState();
+}
+
+class _ProfileRowState extends State<ProfileRow> {
+  String userName = AppStrings.sampleUserName;
+  //i will use firstNameController from about_me page
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -137,151 +144,5 @@ class _ScrollableRowState extends State<ScrollableRow> {
         ),
       ],
     );
-  }
-}
-
-class ProfilePicture extends StatelessWidget {
-  const ProfilePicture({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        image: DecorationImage(
-          image: AppImages.sampleProfilePhoto,
-          fit: BoxFit.cover,
-        ),
-      ),
-      width: 42,
-      height: 42,
-    );
-  }
-}
-
-class QuizCategory extends StatelessWidget {
-  String categoryName;
-  SvgPicture categoryIcon;
-  QuizCategory(this.categoryName, this.categoryIcon);
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: AppColors.secondary,
-      ),
-
-      width: 174,
-      height: 167,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          categoryIcon,
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Text(
-              categoryName,
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class SectionHeader extends StatelessWidget {
-  String header;
-  String secondaryAction;
-  SectionHeader(this.header, this.secondaryAction);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          header,
-          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-        ),
-        Text(
-          secondaryAction,
-          style: TextStyle(
-            color: AppColors.primary,
-            fontWeight: FontWeight.w600,
-            fontSize: 14,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class EmptyScores extends StatelessWidget {
-  const EmptyScores({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 16.0),
-      child: DottedBorder(
-        borderType: BorderType.RRect,
-        radius: Radius.circular(12),
-        dashPattern: [8, 8],
-        color: AppColors.dottedBorderGrey,
-
-        child: Container(
-          width: 358,
-          height: 220,
-          child: Center(
-            child: Container(
-              width: 246,
-              height: 122,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.assignment, size: 40, color: AppColors.textGrey),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: AppColors.textGrey),
-                      AppStrings.noScoreRecorded,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Score {
-  final String category;
-  final int value;
-  final DateTime date;
-
-  Score({required this.category, required this.value, required this.date});
-}
-
-class ScoreSection extends StatefulWidget {
-  ScoreSection({super.key});
-
-  @override
-  State<ScoreSection> createState() => _ScoreSectionState();
-}
-
-class _ScoreSectionState extends State<ScoreSection> {
-  List<Score> scoreHistory = [];
-  @override
-  Widget build(BuildContext context) {
-    if (scoreHistory.isEmpty) {
-      return EmptyScores();
-    } else {
-      return EmptyScores(); //---this will be replaced when the user has scores
-    }
   }
 }
