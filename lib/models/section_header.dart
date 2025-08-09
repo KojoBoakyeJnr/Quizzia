@@ -4,7 +4,8 @@ import 'package:quizzia_splash_screen/resources/app_colors.dart';
 class SectionHeader extends StatelessWidget {
   String header;
   String secondaryAction;
-  SectionHeader(this.header, this.secondaryAction);
+  VoidCallback runSecondaryAction;
+  SectionHeader(this.header, this.secondaryAction, this.runSecondaryAction);
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +16,16 @@ class SectionHeader extends StatelessWidget {
           header,
           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
         ),
-        Text(
-          secondaryAction,
-          style: TextStyle(
-            color: AppColors.primary,
-            fontWeight: FontWeight.w600,
-            fontSize: 14,
+        TextButton(
+          style: ButtonStyle(elevation: WidgetStatePropertyAll(0)),
+          onPressed: runSecondaryAction,
+          child: Text(
+            secondaryAction,
+            style: TextStyle(
+              color: AppColors.primary,
+              fontWeight: FontWeight.w600,
+              fontSize: 14,
+            ),
           ),
         ),
       ],

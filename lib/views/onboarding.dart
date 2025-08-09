@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
 import 'package:quizzia_splash_screen/resources/app_images.dart';
+import 'package:quizzia_splash_screen/resources/routes.dart';
+import 'package:quizzia_splash_screen/views/about_me.dart';
 import '../resources/app_strings.dart';
 
 class Onboarding extends StatelessWidget {
@@ -51,7 +53,9 @@ class Onboarding extends StatelessWidget {
                   width: 358,
                   height: 58,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(Routes.aboutMePage);
+                    },
                     style: ButtonStyle(
                       shape: WidgetStatePropertyAll(
                         RoundedRectangleBorder(

@@ -2,11 +2,27 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
+import 'package:quizzia_splash_screen/resources/routes.dart';
 import '../resources/app_strings.dart';
 import '../resources/app_images.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      Duration(seconds: 2),
+      () => Navigator.of(context).pushNamed(Routes.onboardingPage),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

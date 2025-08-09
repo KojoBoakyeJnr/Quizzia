@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quizzia_splash_screen/resources/app_button.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
 import 'package:quizzia_splash_screen/resources/app_formfields.dart';
+import 'package:quizzia_splash_screen/resources/routes.dart';
 import '../resources/app_strings.dart';
 
 class AboutMe extends StatefulWidget {
@@ -33,7 +34,12 @@ class _AboutMeState extends State<AboutMe> {
           AppStrings.aboutMe,
           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
         ),
-        leading: Icon(CupertinoIcons.arrow_left),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(CupertinoIcons.arrow_left),
+        ),
       ),
       backgroundColor: AppColors.primaryWhite,
       body: SafeArea(
@@ -137,7 +143,11 @@ class _AboutMeState extends State<AboutMe> {
                         (firstNameActive && lastNameActive && descriptionActive)
                             ? AppColors.primary
                             : AppColors.buttonGrey,
-                    onPressed: () {},
+                    onPressed: () {
+                      (firstNameActive && lastNameActive && descriptionActive)
+                          ? Navigator.of(context).pushNamed(Routes.homePage)
+                          : () {};
+                    },
                   ),
                 ),
               ),

@@ -8,6 +8,7 @@ import 'package:quizzia_splash_screen/models/section_header.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
 import 'package:quizzia_splash_screen/resources/app_formfields.dart';
 import 'package:quizzia_splash_screen/resources/app_images.dart';
+import 'package:quizzia_splash_screen/resources/routes.dart';
 import '../resources/app_strings.dart';
 
 class Home extends StatefulWidget {
@@ -108,7 +109,9 @@ class _ScrollableRowState extends State<ScrollableRow> {
           padding: const EdgeInsets.only(top: 25.5, left: 16, right: 16),
           child: Column(
             children: [
-              SectionHeader(AppStrings.categories, AppStrings.seeMore),
+              SectionHeader(AppStrings.categories, AppStrings.seeMore, () {
+                Navigator.of(context).pushNamed(Routes.categoriesPage);
+              }),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: SizedBox(
@@ -134,7 +137,11 @@ class _ScrollableRowState extends State<ScrollableRow> {
                 padding: const EdgeInsets.only(top: 34.0),
                 child: Column(
                   children: [
-                    SectionHeader(AppStrings.scoreHistory, AppStrings.viewMore),
+                    SectionHeader(
+                      AppStrings.scoreHistory,
+                      AppStrings.viewMore,
+                      () {},
+                    ),
                     ScoreSection(),
                   ],
                 ),

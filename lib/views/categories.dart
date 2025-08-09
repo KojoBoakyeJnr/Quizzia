@@ -19,7 +19,12 @@ class Categories extends StatelessWidget {
           AppStrings.quizCategories,
           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
         ),
-        leading: Icon(CupertinoIcons.arrow_left),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(CupertinoIcons.arrow_left),
+        ),
       ),
       backgroundColor: AppColors.primaryWhite,
       body: SafeArea(
