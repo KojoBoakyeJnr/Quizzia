@@ -16,9 +16,8 @@ class SectionHeader extends StatelessWidget {
           header,
           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
         ),
-        TextButton(
-          style: ButtonStyle(elevation: WidgetStatePropertyAll(0)),
-          onPressed: runSecondaryAction,
+        GestureDetector(
+          onTap: runSecondaryAction,
           child: Text(
             secondaryAction,
             style: TextStyle(
