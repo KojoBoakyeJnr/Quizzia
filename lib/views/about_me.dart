@@ -46,91 +46,102 @@ class _AboutMeState extends State<AboutMe> {
         child: Center(
           child: Column(
             children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Text(
-                            AppStrings.enterFirstName,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14,
+              SingleChildScrollView(
+                child: Expanded(
+                  child: Column(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
+                            child: Text(
+                              AppStrings.enterFirstName,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0, bottom: 10),
-                          child: CustomTextInputField(
-                            onHasTextChanged: (value) {
-                              setState(() {
-                                firstNameActive = value;
-                              });
-                            },
-                            hintText: AppStrings.hintFirstName,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 8.0,
+                              bottom: 10,
+                            ),
+                            child: CustomTextInputField(
+                              onHasTextChanged: (value) {
+                                setState(() {
+                                  firstNameActive = value;
+                                });
+                              },
+                              hintText: AppStrings.hintFirstName,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
 
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Text(
-                            AppStrings.enterLastName,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
+                            child: Text(
+                              AppStrings.enterLastName,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0, bottom: 10),
-                          child: CustomTextInputField(
-                            onHasTextChanged: (value) {
-                              setState(() {
-                                lastNameActive = value;
-                              });
-                            },
-                            hintText: AppStrings.hintLastName,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 8.0,
+                              bottom: 10,
+                            ),
+                            child: CustomTextInputField(
+                              onHasTextChanged: (value) {
+                                setState(() {
+                                  lastNameActive = value;
+                                });
+                              },
+                              hintText: AppStrings.hintLastName,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
 
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Text(
-                            AppStrings.describeYourSelf,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
+                            child: Text(
+                              AppStrings.describeYourSelf,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0, bottom: 10),
-                          child: CustomTextInputField(
-                            onHasTextChanged: (value) {
-                              setState(() {
-                                descriptionActive = value;
-                              });
-                            },
-                            maxLines: 5,
-                            hintText: AppStrings.hintdescription,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 8.0,
+                              bottom: 10,
+                            ),
+                            child: CustomTextInputField(
+                              onHasTextChanged: (value) {
+                                setState(() {
+                                  descriptionActive = value;
+                                });
+                              },
+                              maxLines: 5,
+                              hintText: AppStrings.hintdescription,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
 
