@@ -6,16 +6,24 @@ class ProfilePicture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        image: DecorationImage(
-          image: AppImages.sampleProfilePhoto,
-          fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(
+          context,
+        ).popUntil((Route route) => route.settings.name == "/");
+      },
+
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: AppImages.sampleProfilePhoto,
+            fit: BoxFit.cover,
+          ),
         ),
+        width: 42,
+        height: 42,
       ),
-      width: 42,
-      height: 42,
     );
   }
 }
