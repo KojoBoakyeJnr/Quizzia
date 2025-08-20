@@ -15,12 +15,16 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState() {
-    super.initState();
+  void startUp() {
     Future.delayed(
       Duration(seconds: 2),
       () => Navigator.of(context).pushNamed(Routes.onboardingPage),
     );
+  }
+
+  void initState() {
+    super.initState();
+    startUp();
   }
 
   @override
@@ -36,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    AppImages.appLogo,
+                    GestureDetector(onTap: startUp, child: AppImages.appLogo),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(

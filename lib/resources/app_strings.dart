@@ -37,4 +37,11 @@ class AppStrings {
   static const videoGames = 'Video Games';
   static const search = "Search";
   static const sampleUserName = "Emmanuel";
+  static const quizSettings = "Quiz Settings";
+  static const howManyQuestions = "How may questions would you like?";
+  static const selectDifficulty = "Select Difficulty";
+  static const easy = "Easy";
+  static const hard = "Hard";
+  static const medium = "Medium";
+  static const startQuiz = "Start Quiz";
 }
