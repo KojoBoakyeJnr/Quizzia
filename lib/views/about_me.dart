@@ -45,6 +45,7 @@ class _AboutMeState extends State<AboutMe> {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SingleChildScrollView(
                 child: Expanded(
