@@ -15,12 +15,11 @@ class QuizSettingsDialog extends StatefulWidget {
 }
 
 class _QuizSettingsDialogState extends State<QuizSettingsDialog> {
-  int _questionSize = 0;
+  int _questionSize = 5;
 
   @override
   void initState() {
     super.initState();
-    _questionSize = 5;
   }
 
   void increaseQuestion() {
@@ -41,142 +40,136 @@ class _QuizSettingsDialogState extends State<QuizSettingsDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<QuizDifficultyProvider>(
-      builder:
-          (context, difficultyProvider, child) => (AlertDialog(
-            backgroundColor: AppColors.primaryWhite,
-            contentPadding: EdgeInsets.all(0),
-            content: SizedBox(
-              height: 402,
+    return AlertDialog(
+      backgroundColor: AppColors.primaryWhite,
+      contentPadding: EdgeInsets.all(0),
+      content: SizedBox(
+        height: 402,
 
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 24.0,
+                left: 16,
+                right: 16,
+                bottom: 16,
+              ),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 24.0,
-                      left: 16,
-                      right: 16,
-                      bottom: 16,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          AppStrings.quizSettings,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () => Navigator.of(context).pop(),
-                          child: Icon(
-                            CupertinoIcons.clear_circled,
-                            color: AppColors.primary,
-                          ),
-                        ),
-                      ],
-                    ),
+                  Text(
+                    AppStrings.quizSettings,
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
                   ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 10.0,
-                      left: 16.0,
-                      right: 16.0,
-                      bottom: 10.0,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          AppStrings.howManyQuestions,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              QuantityButton(
-                                icon: Icons.remove,
-                                onTap: decreaseQuestion,
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: AppColors.dottedBorderGrey,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-
-                                width: 102,
-                                height: 56,
-                                child: Center(
-                                  child: Text(
-                                    "$_questionSize",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 24,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              QuantityButton(
-                                icon: Icons.add,
-                                onTap: increaseQuestion,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 20.0,
-                      left: 16.0,
-                      right: 16.0,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10.0),
-                          child: Text(
-                            AppStrings.selectDifficulty,
-                            textAlign: TextAlign.left,
-                          ),
-                        ),
-                        DifficultyDropDown(),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 16.0,
-                      right: 16.0,
-                      bottom: 24.0,
-                      top: 32.0,
-                    ),
-                    child: CustomButton(
-                      text: AppStrings.startQuiz,
-                      buttonColor: AppColors.primary,
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => DisplayDifficulty(),
-                          ),
-                        );
-                      },
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).pop(),
+                    child: Icon(
+                      CupertinoIcons.clear_circled,
+                      color: AppColors.primary,
                     ),
                   ),
                 ],
               ),
             ),
-          )),
+
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 10.0,
+                left: 16.0,
+                right: 16.0,
+                bottom: 10.0,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    AppStrings.howManyQuestions,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(fontSize: 14),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        QuantityButton(
+                          icon: Icons.remove,
+                          onTap: decreaseQuestion,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: AppColors.dottedBorderGrey,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+
+                          width: 102,
+                          height: 56,
+                          child: Center(
+                            child: Text(
+                              "$_questionSize",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 24,
+                              ),
+                            ),
+                          ),
+                        ),
+                        QuantityButton(
+                          icon: Icons.add,
+                          onTap: increaseQuestion,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20.0,
+                left: 16.0,
+                right: 16.0,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: Text(
+                      AppStrings.selectDifficulty,
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  DifficultyDropDown(),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 16.0,
+                right: 16.0,
+                bottom: 24.0,
+                top: 32.0,
+              ),
+              child: CustomButton(
+                text: AppStrings.startQuiz,
+                buttonColor: AppColors.primary,
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => DisplayDifficulty(),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
