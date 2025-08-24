@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quizzia_splash_screen/resources/quiz_difficulty_provider.dart';
+import 'package:quizzia_splash_screen/providers/quiz_difficulty_provider.dart';
 import 'package:quizzia_splash_screen/resources/routes.dart';
 import 'package:quizzia_splash_screen/views/about_me.dart';
 import 'package:quizzia_splash_screen/views/categories.dart';

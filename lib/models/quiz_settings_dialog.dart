@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:quizzia_splash_screen/resources/app_button.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
 import 'package:quizzia_splash_screen/resources/app_strings.dart';
-import 'package:quizzia_splash_screen/resources/quiz_difficulty_provider.dart';
+import 'package:quizzia_splash_screen/providers/quiz_difficulty_provider.dart';
 import 'package:quizzia_splash_screen/views/display_difficulty.dart';
 
 class QuizSettingsDialog extends StatefulWidget {
