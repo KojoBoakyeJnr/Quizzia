@@ -15,12 +15,11 @@ class QuizSettingsDialog extends StatefulWidget {
 }
 
 class _QuizSettingsDialogState extends State<QuizSettingsDialog> {
-  int _questionSize = 0;
+  int _questionSize = 5;
 
   @override
   void initState() {
     super.initState();
-    _questionSize = 5;
   }
 
   void increaseQuestion() {
