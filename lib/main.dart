@@ -1,6 +1,8 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:quizzia_splash_screen/resources/quiz_difficulty_provider.dart';
 import 'package:quizzia_splash_screen/resources/routes.dart';
 import 'package:quizzia_splash_screen/views/about_me.dart';
 import 'package:quizzia_splash_screen/views/categories.dart';
@@ -9,7 +11,14 @@ import 'package:quizzia_splash_screen/views/onboarding.dart';
 import 'package:quizzia_splash_screen/views/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => QuizDifficultyProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
