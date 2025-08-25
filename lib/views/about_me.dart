@@ -4,6 +4,8 @@ import 'package:quizzia_splash_screen/resources/app_button.dart';
 import 'package:quizzia_splash_screen/resources/app_colors.dart';
 import 'package:quizzia_splash_screen/resources/app_formfields.dart';
 import 'package:quizzia_splash_screen/resources/routes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/util/legacy_to_async_migration_util.dart';
 import '../resources/app_strings.dart';
 
 class AboutMe extends StatefulWidget {
@@ -156,9 +158,10 @@ class _AboutMeState extends State<AboutMe> {
                             ? AppColors.primary
                             : AppColors.buttonGrey,
                     onPressed: () {
+                      setUserName();
                       (firstNameActive && lastNameActive && descriptionActive)
                           ? Navigator.of(context).pushNamed(Routes.homePage)
-                          : () {};
+                          : null;
                     },
                   ),
                 ),
@@ -168,5 +171,10 @@ class _AboutMeState extends State<AboutMe> {
         ),
       ),
     );
+  }
+
+  void setUserName() async {
+    final pref = await SharedPreferences.getInstance();
+    pref.setBool("isUserNameSet", firstNameActive);
   }
 }

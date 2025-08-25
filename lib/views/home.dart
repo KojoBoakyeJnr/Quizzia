@@ -9,6 +9,7 @@ import 'package:quizzia_splash_screen/resources/app_colors.dart';
 import 'package:quizzia_splash_screen/resources/app_formfields.dart';
 import 'package:quizzia_splash_screen/resources/app_images.dart';
 import 'package:quizzia_splash_screen/resources/routes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../resources/app_strings.dart';
 
 class Home extends StatefulWidget {
@@ -36,15 +37,21 @@ class _HomeState extends State<Home> {
 }
 
 class ProfileRow extends StatefulWidget {
-  const ProfileRow({super.key});
+  ProfileRow({super.key});
 
   @override
   State<ProfileRow> createState() => _ProfileRowState();
 }
 
 class _ProfileRowState extends State<ProfileRow> {
-  String userName = AppStrings.sampleUserName;
-  //i will use firstNameController from about_me page
+  @override
+  String? userName = "...";
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
